@@ -30,8 +30,10 @@ public class MadLibsRevised {
                     System.out.println(madLibOne);
                     tagIsNoun = false;
                     indexOfStartTag = madLibOne.indexOf("<");
-                    indexOfEndTag = madLibOne.indexOf(">");
+                    indexOfEndTag = madLibOne.indexOf(">"); 
                 }
+
+                //shjkjhkjhs
                 if (tagIsPluralNoun == true) {
                     System.out.println("Please type a plural noun: ");
                     String pluralNounChosen = input.nextLine();

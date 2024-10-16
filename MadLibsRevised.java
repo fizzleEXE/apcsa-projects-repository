@@ -26,7 +26,7 @@ public class MadLibsRevised {
                 if (tagIsNoun == true) {
                     System.out.println("Please type a noun: ");
                     String nounChosen = input.nextLine();
-                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + nounChosen + " " + madLibOne.substring(indexOfEndTag + 1));
+                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + nounChosen + madLibOne.substring(indexOfEndTag + 1));
                     System.out.println(madLibOne);
                     tagIsNoun = false;
                     indexOfStartTag = madLibOne.indexOf("<");
@@ -35,7 +35,7 @@ public class MadLibsRevised {
                 if (tagIsPluralNoun == true) {
                     System.out.println("Please type a plural noun: ");
                     String pluralNounChosen = input.nextLine();
-                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + pluralNounChosen + " " + madLibOne.substring(indexOfEndTag + 1));
+                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + pluralNounChosen + madLibOne.substring(indexOfEndTag + 1));
                     System.out.println(madLibOne);
                     tagIsPluralNoun = false;
                     indexOfStartTag = madLibOne.indexOf("<");
@@ -44,7 +44,7 @@ public class MadLibsRevised {
                 if (tagIsNumber == true) {
                     System.out.println("Please type a number (as a word!): ");
                     String numberChosen = input.nextLine();
-                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + numberChosen + " " + madLibOne.substring(indexOfEndTag + 1));
+                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + numberChosen + madLibOne.substring(indexOfEndTag + 1));
                     System.out.println(madLibOne);
                     tagIsNumber = false;
                     indexOfStartTag = madLibOne.indexOf("<");
@@ -53,7 +53,7 @@ public class MadLibsRevised {
                 if (tagIsAdverb == true) {
                     System.out.println("Please type an adverb: ");
                     String adverbChosen = input.nextLine();
-                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + adverbChosen + " " + madLibOne.substring(indexOfEndTag + 1));
+                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + adverbChosen + madLibOne.substring(indexOfEndTag + 1));
                     System.out.println(madLibOne);
                     tagIsAdverb = false;
                     indexOfStartTag = madLibOne.indexOf("<");
@@ -62,7 +62,7 @@ public class MadLibsRevised {
                 if (tagIsAdjective == true) {
                     System.out.println("Please type an adjective: ");
                     String adjectiveChosen = input.nextLine();
-                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + adjectiveChosen + " " + madLibOne.substring(indexOfEndTag + 1));
+                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + adjectiveChosen + madLibOne.substring(indexOfEndTag + 1));
                     System.out.println(madLibOne);
                     tagIsAdverb = false;
                     indexOfStartTag = madLibOne.indexOf("<");
@@ -71,9 +71,12 @@ public class MadLibsRevised {
                 if (tagIsVerb == true) {
                     System.out.println("Please type a verb: ");
                     String verbChosen = input.nextLine();
-                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + verbChosen + " " + madLibOne.substring(indexOfEndTag + 1));
+                    madLibOne = (madLibOne.substring(0, indexOfStartTag) + verbChosen + madLibOne.substring(indexOfEndTag + 1));
                     System.out.println(madLibOne);
                     tagIsAdverb = false;
+                }
+                if (indexOfStartTag == -1) {
+                    break;
                 }
             }
 

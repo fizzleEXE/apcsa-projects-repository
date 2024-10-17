@@ -1,3 +1,11 @@
+/* Name: Madden Ortiz
+ * Date: 10/17/2024
+ * Assignment: Mad Lib Project
+ * Version: 1
+ */
+
+
+
 import java.util.Scanner;
 
 public class MadLibsRevised {
@@ -12,9 +20,14 @@ public class MadLibsRevised {
         boolean inMadLibTwo = false;
         String madLibThree = "In a faraway <noun>, a <adjective> king <verb> over the land.";
         boolean inMadLibThree = false;
+        String madLibFour = "";
+        boolean inMadLibFour = false;
+
+        //tag related
         int indexOfStartTag;
         int indexOfEndTag;
         String wordChosen;
+
 
         while (inMadLibOne == true) {
             // find tag
@@ -62,6 +75,7 @@ public class MadLibsRevised {
             if (indexOfStartTag == -1) {
                 System.out.println(madLibThree);
                 inMadLibThree = false;
+                inMadLibFour = true;
                 break;
             }
             System.out.println("Please type a " + madLibThree.substring(indexOfStartTag + 1, indexOfEndTag) + ":");
@@ -70,6 +84,29 @@ public class MadLibsRevised {
                     + madLibThree.substring(indexOfEndTag + 1));
             indexOfStartTag = madLibThree.indexOf("<");
             indexOfEndTag = madLibThree.indexOf(">");
+        }
+
+        //get madlib from user
+        System.out.println("\nLet's try using your own Mad Lib!");
+        System.out.println("Type your madlib. Please make to include at least one tag formatted as <tag>: ");
+        madLibFour = input.nextLine();
+
+        while (inMadLibFour == true) {
+            // find tag
+            indexOfStartTag = madLibFour.indexOf("<");
+            indexOfEndTag = madLibFour.indexOf(">");
+
+            // start modifying string
+            if (indexOfStartTag == -1) {
+                System.out.println(madLibFour);
+                inMadLibFour = false;
+                break;
+            }
+            System.out.println("Please type a " + madLibFour.substring(indexOfStartTag + 1, indexOfEndTag) + ":");
+            wordChosen = input.nextLine();
+            madLibFour = (madLibFour.substring(0, indexOfStartTag) + wordChosen + madLibFour.substring(indexOfEndTag + 1));
+            indexOfStartTag = madLibFour.indexOf("<");
+            indexOfEndTag = madLibFour.indexOf(">");
         }
         input.close();
     }

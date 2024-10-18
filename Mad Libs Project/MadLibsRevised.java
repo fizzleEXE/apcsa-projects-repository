@@ -4,8 +4,6 @@
  * Version: 1
  */
 
-
-
 import java.util.Scanner;
 
 public class MadLibsRevised {
@@ -43,6 +41,10 @@ public class MadLibsRevised {
             }
             System.out.println("Please type a " + madLibOne.substring(indexOfStartTag + 1, indexOfEndTag) + ":");
             wordChosen = input.nextLine();
+            if (wordChosen.indexOf("<") > -1 || wordChosen.indexOf(">") > -1) {
+                System.out.println("Do not include brackets. Try again.");
+                continue;
+            }
             madLibOne = (madLibOne.substring(0, indexOfStartTag) + wordChosen + madLibOne.substring(indexOfEndTag + 1));
             indexOfStartTag = madLibOne.indexOf("<");
             indexOfEndTag = madLibOne.indexOf(">");
@@ -61,6 +63,10 @@ public class MadLibsRevised {
             }
             System.out.println("Please type a " + madLibTwo.substring(indexOfStartTag + 1, indexOfEndTag) + ":");
             wordChosen = input.nextLine();
+            if (wordChosen.indexOf("<") > -1 || wordChosen.indexOf(">") > -1) {
+                System.out.println("Do not include brackets. Try again.");
+                continue;
+            }
             madLibTwo = (madLibTwo.substring(0, indexOfStartTag) + wordChosen
                     + madLibTwo.substring(indexOfEndTag + 1));
             indexOfStartTag = madLibTwo.indexOf("<");
@@ -80,6 +86,10 @@ public class MadLibsRevised {
             }
             System.out.println("Please type a " + madLibThree.substring(indexOfStartTag + 1, indexOfEndTag) + ":");
             wordChosen = input.nextLine();
+            if (wordChosen.indexOf("<") > -1 || wordChosen.indexOf(">") > -1) {
+                System.out.println("Do not include brackets. Try again.");
+                continue;
+            }
             madLibThree = (madLibThree.substring(0, indexOfStartTag) + wordChosen
                     + madLibThree.substring(indexOfEndTag + 1));
             indexOfStartTag = madLibThree.indexOf("<");
@@ -104,6 +114,10 @@ public class MadLibsRevised {
             }
             System.out.println("Please type a " + madLibFour.substring(indexOfStartTag + 1, indexOfEndTag) + ":");
             wordChosen = input.nextLine();
+            if (wordChosen.indexOf("<") > -1 || wordChosen.indexOf(">") > -1) {
+                System.out.println("Do not include brackets. Try again.");
+                continue;
+            }
             madLibFour = (madLibFour.substring(0, indexOfStartTag) + wordChosen + madLibFour.substring(indexOfEndTag + 1));
             indexOfStartTag = madLibFour.indexOf("<");
             indexOfEndTag = madLibFour.indexOf(">");
